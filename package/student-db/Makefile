@@ -22,7 +22,7 @@ define Package/student-db
 endef
 
 define Package/student-db/description
-	Student DB
+	Student DB - package for reading and writing database to file
 endef
 
 define Package/student-db/install
