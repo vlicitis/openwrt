@@ -4,15 +4,13 @@ PKG_NAME:=student-db
 
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
-#PKG_FLAGS := nonshared
-#MAKE_PATH:=src
-#PKG_SOURCE_PROTO:=git
-#PKG_SOURCE_URL:=https://github.com/vlicitis/student-db.git
-#PKG_SOURCE_VERSION:=main
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/vlicitis/student-db.git
+PKG_SOURCE_VERSION:=main
 
-#PKG_MIRROR_HASH:=skip
+PKG_MIRROR_HASH:=skip
 
-#PKG_MAINTAINER:=Viesturs Licitis <vllicitis@gmail.com>
+PKG_MAINTAINER:=Viesturs Licitis <vllicitis@gmail.com>
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -27,15 +25,7 @@ define Package/student-db/description
 	Student DB
 endef
 
-define Build/Prepare
-	$(CP) /home/vlicitis/roma_c/student-db/*.c $(PKG_BUILD_DIR)/
-	$(CP) /home/vlicitis/roma_c/student-db/*.h $(PKG_BUILD_DIR)/
-	$(CP) /home/vlicitis/roma_c/student-db/Makefile $(PKG_BUILD_DIR)/
-endef
-
 define Package/student-db/install
-	#$(CP) $(PKG_BUILD_DIR)/student-db $(1)/
-	#rm -f $(1)/usr/bin/student_db
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/student_db $(1)/usr/bin/
 endef
